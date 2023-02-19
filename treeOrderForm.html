@@ -91,42 +91,6 @@
         // declaring zip variabla
         let zip = zipCodeInput.value;
 
-        // homeowner name validation
-        if (name.length == 0) {
-        //   alert("Enter Homeowner's name!");
-          return;
-        }
-
-        // house number validation
-        if (houseNumber.length == 0) {
-          alert("Enter house number!");
-          return;
-        }
-
-        // street name validation
-        if (streetName.length == 0) {
-          alert("Enter street name!");
-          return;
-        }
-
-        // city name validation
-        if (city.length == 0) {
-          alert("Enter city!");
-          return;
-        }
-
-        // zipcode validation
-        if (zip.length == 0) {
-          alert("Enter zip code!");
-          return;
-        }
-
-        // tree type validation
-        if (treeType.length == 0) {
-          alert("Select tree type!");
-          return;
-        }
-
         // FUNCTION TO VALIDATE MINNESOTA ZIP CODE AND TO ONLY ACCEPT NUMERIC ENTRIES
         function validateZip() {
           if (zip >= 55001 && zip <= 56763) {
@@ -134,7 +98,8 @@
           } else if (isNaN(zip)) {
             alert("Please enter a numberic number.");
           } else {
-            alert("Please enter a valid Minnesota zipcode.");
+            console.log("Please enter a valid Minnesota zipcode.");
+            return
           }
         }
 
@@ -174,6 +139,10 @@
         if (!zip) {
           errors.push("Enter zip code");
         }
+
+        // if (!validateZip(zip)) {
+        //   errors.push("Enter a Minnesota zip code");
+        // }
 
         if (errors.length > 0) {
           let errorMsg = errors.join("\n");
