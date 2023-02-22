@@ -53,8 +53,17 @@ console.log(
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value.
 // The answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
+let largestCode = '' // placeholder value
+let largestRateAmount = 0
+for (let code in rates) { //loop over each property in an object
+  let rateAmount = rates[code] // reads the value for the code property
+  if (rateAmount > largestRateAmount) { //is this larger than any other seen so far
+    largestRateAmount =rateAmount // update largest value
+    largestCode = code // and it's corresponding code
+  }
+}
 
-
+console.log(largestCode, largestRateAmount)
 /* c. Use this JavaScript array of objects of cat owners, and their cats. Source, moderncat.com
  */
 
